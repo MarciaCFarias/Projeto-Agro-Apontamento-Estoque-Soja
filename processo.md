@@ -1,5 +1,8 @@
-# Documento de Análise de Processo – Apontamento Estoque Soja
+# 📄 Mapeamento de Processo – Apontamento Estoque Soja
+---
 
+## Fluxograma - Visão Macro do Processo
+<img width="1794" height="3459" alt="image" src="https://github.com/user-attachments/assets/2dfca898-763f-45fd-bc5e-18fac8d11628" />
 
 
 ## Fluxo TO BE
@@ -56,7 +59,7 @@
 
 ---
 
-## 2. Melhorias Implementadas no Processo
+## Melhorias Implementadas no Processo
 
 - **Automação RPA** para eliminar digitação manual no SAP.
 - **Processamento múltiplo diário**, sempre que nova planilha é publicada.
@@ -67,7 +70,7 @@
 
 ---
 
-## 3. Tratativas em Caso de Exceções
+## Tratativas em Caso de Exceções
 
 - **Erros de aplicação ou negócios não previstos**:  
   Envio de e-mail ao responsável com print da tela de erro.
@@ -82,7 +85,7 @@
 
 ---
 
-## 4. KPI – Indicadores de Desempenho
+## KPI – Indicadores de Desempenho
 
 - **Tempo médio de processamento por planilha** (`Total horas`).
 - **Quantidade de lotes processados** por execução (`QTD_LOTES_PROCESSADOS`).
@@ -93,7 +96,7 @@
 
 ---
 
-## 5. Observações ou Destaques
+## Observações
 
 - A robustez do processo depende fortemente do **padrão das planilhas** recebidas; qualquer alteração exige comunicação prévia.
 - A **integração com SAP** utiliza transações críticas (MB31, MB1A, MBST, YPPUPLBATCH, SCAT), devendo respeitar perfis de acesso e segregação de funções.
