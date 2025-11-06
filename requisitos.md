@@ -3,7 +3,7 @@
 ## 1. Regras de Negócio
 
 1. **Gatilho de Execução**
-   - O robô inicia automaticamente sempre que a planilha “Internalização Soja DDMMAAAAHH” for disponibilizada na pasta SharePoint especificada.
+   - O robô inicia automaticamente sempre que a planilha “Soja DDMMAAAAHH” for disponibilizada na pasta SharePoint especificada.
    - Podem ocorrer múltiplas execuções diárias.
 
 2. **Padrão das Planilhas**
@@ -40,13 +40,13 @@
    - Garantir que as credenciais do robô estão ativas.
 
 2. **Durante o Processamento**
-   - Checar se cada campo obrigatório (Invoice, Order, Batch, Quantidades, CD, Depósito, FERT Code, UNBW) está preenchido.
+   - Checar se cada campo obrigatório, colunas específicas, está preenchido.
    - Validar respostas do SAP (mensagens de alerta, sucesso ou erro).
    - Garantir que apenas itens válidos sejam lançados, estornados ou atualizados.
 
 3. **Após Processamento**
-   - Confirmar que as colunas “Material doc. (MB31)” e “Material doc. (MB1A)” foram atualizadas.
-   - Conferir integridade dos arquivos gerados (BATCH SOJA 5.txt e SCAT 1.txt).
+   - Confirmar que as colunas “Material doc. (MB31)” e “XXX doc. (MB1A)” foram atualizadas.
+   - Conferir integridade dos arquivos gerados (YYY.txt e ZZZ.txt).
    - Validar se relatórios sintético e analítico foram gerados e salvos nas pastas corretas.
 
 ---
@@ -54,12 +54,12 @@
 ## 3. Saídas Esperadas
 
 1. **Planilhas**
-   - “Internalização DDMMAAA_Unificada” consolidando os registros processados.
+   - “DDMMAAA_Unificada” consolidando os registros processados.
    - Planilhas de exceção contendo registros com erro.
 
 2. **Arquivos para SAP**
-   - “BATCH SOJA 5.txt” atualizado e validado.
-   - “SCAT 1.txt” atualizado e validado.
+   - “XXX.txt” atualizado e validado.
+   - “YYY.txt” atualizado e validado.
 
 3. **Relatórios**
    - Relatório Sintético (tempo de execução, quantidade de lotes processados).
@@ -79,7 +79,7 @@
 
 2. **Integridade de Dados**
    - 100% dos registros válidos processados com sucesso no SAP.
-   - Arquivos BATCH e SCAT atualizados e incluídos no SAP sem inconsistências.
+   - Arquivos atualizados e incluídos no SAP sem inconsistências.
 
 3. **Controle de Erros**
    - Todas as exceções registradas com LOG e enviadas para análise.
