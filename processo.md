@@ -8,7 +8,7 @@
 ## Fluxo TO BE
 
 1. **Disponibilizar Planilha**  
-   - Área responsável publica no SharePoint a planilha “Internalização Soja DDMMAAAAHH”.
+   - Área responsável publica no SharePoint a planilha “Soja DDMMAAAAHH”.
    - Planilha pode ser disponibilizada várias vezes ao dia.
 
 2. **Captura de Dados**  
@@ -32,19 +32,19 @@
    - Utiliza transação MBST para exclusão de lançamentos inválidos.
 
 7. **Atualizar Planilha**  
-   - Preenche colunas “Material doc. (MB31)” e “Material doc. (MB1A)”.
+   - Preenche colunas “X (MB31)” e “Y. (MB1A)”.
    - Registros com erro são movidos para pasta “EXCEÇÃO”.
 
 8. **Unificar Dados**  
-   - Consolida dados processados no dia em “Internalização DDMMAAA_Unificada”.
+   - Consolida dados processados no dia em “DDMMAAA_Unificada”.
 
 9. **Atualizar Características dos Lotes/Peso – BATCH**  
-   - Atualiza e valida dados no arquivo “BATCH.xlsx”.
-   - Gera arquivo “BATCH SOJA Modelo 5.txt” para inclusão no SAP.
+   - Atualiza e valida dados no arquivo “XXX.xlsx”.
+   - Gera arquivo “YYY.txt” para inclusão no SAP.
 
 10. **Atualizar Características dos Lotes/Peso – SCAT**  
-    - Atualiza e valida dados no arquivo “SCAT.xlsx”.
-    - Gera arquivo “SCAT ZBRSE030 1.txt” para inclusão no SAP.
+    - Atualiza e valida dados no arquivo “ZZZ.xlsx”.
+    - Gera arquivo “WWW.txt” para inclusão no SAP.
 
 11. **Incluir Arquivos no SAP**  
     - Inclui arquivos gerados nas transações.
@@ -76,7 +76,7 @@
   Envio de e-mail ao responsável com print da tela de erro.
 - **Falha de inclusão no SAP**:  
   Registro movido para pasta “EXCEÇÃO”.
-- **Dados ausentes ou inválidos** nas planilhas BATCH/SCAT:  
+- **Dados ausentes ou inválidos** nas planilhas:  
   Arquivos salvos em pasta “EXCEÇÃO” e excluídos do fluxo de inclusão no SAP.
 - **Mensagens de alerta ou erro**:  
   Captura de logs detalhados, sem interromper processamento de outros lotes.
@@ -91,7 +91,7 @@
 - **Quantidade de lotes processados** por execução (`QTD_LOTES_PROCESSADOS`).
 - **Taxa de sucesso dos lançamentos** (% registros incluídos com sucesso no SAP).
 - **Taxa de retrabalho** (% registros movidos para pasta “EXCEÇÃO”).
-- **Tempo de atualização das características** (BATCH/SCAT).
+- **Tempo de atualização das características** nas planilhas.
 - **Disponibilidade do robô** (% de execuções realizadas sem falhas técnicas).
 
 ---
@@ -99,7 +99,7 @@
 ## Observações
 
 - A robustez do processo depende fortemente do **padrão das planilhas** recebidas; qualquer alteração exige comunicação prévia.
-- A **integração com SAP** utiliza transações críticas (MB31, MB1A, MBST, YPPUPLBATCH, SCAT), devendo respeitar perfis de acesso e segregação de funções.
+- A **integração com SAP** utiliza transações críticas, devendo respeitar perfis de acesso e segregação de funções.
 - O **controle de exceções** é bem definido, garantindo rastreabilidade.
 - O processo está preparado para **alta frequência de execução** no mesmo dia.
 - A manutenção das pastas no SharePoint e nomes dos arquivos é responsabilidade da área solicitante.
